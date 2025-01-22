@@ -15,4 +15,8 @@ after_initialize do
   Discourse::Application.routes.append do
     put "/add_parameter_to_list" => "saved_search_extension#add_element"
   end
+  add_to_serializer(
+    :current_user,
+    :can_use_saved_searches?,
+  ) { scope.can_use_saved_searches? }
 end
