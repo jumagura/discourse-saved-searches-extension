@@ -1,5 +1,4 @@
 class SavedSearchExtensionController < ApplicationController
-  requires_plugin "discourse-saved-searches"
   before_action :ensure_logged_in
 
   def add_element
