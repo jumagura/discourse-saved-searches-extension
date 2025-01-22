@@ -1,0 +1,35 @@
+.search-extension-notification {
+  display: flex;
+  align-items: center;
+
+  .search-extension-button {
+    flex-grow: 1;
+    padding: 10px 20px;
+    width: 100%;
+    background: none !important;
+
+    &:hover {
+      color: var(--primary);
+      background: var(--highlight-bg) !important;
+    }
+
+    svg {
+      color: var(--primary) !important;
+
+      &:hover {
+        color: var(--primary) !important;
+      }
+    }
+  }
+
+  .search-extension-button-icon {
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    width: 40px;
+    /* Adjust based on icon size */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
