@@ -1,0 +1,3 @@
+plugins:
+  saved_searches_extension_enabled:
+    default: false
