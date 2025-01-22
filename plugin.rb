@@ -2,7 +2,7 @@
 
 # name: discourse-saved-searches-extension
 # about: Display an visible search link suggestion.
-# version: 0.1
+# version: 0.2
 # authors: Marcos Gutierrez
 # url: https://github.com/jumagura/discourse-saved-searches-extension
 
