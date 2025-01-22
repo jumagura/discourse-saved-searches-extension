@@ -4,7 +4,7 @@
 # about: Display an visible search link suggestion.
 # version: 0.1
 # authors: Marcos Gutierrez
-# url: TODO
+# url: https://github.com/jumagura/discourse-saved-searches-extension
 
 enabled_site_setting :saved_searches_extension_enabled
 
