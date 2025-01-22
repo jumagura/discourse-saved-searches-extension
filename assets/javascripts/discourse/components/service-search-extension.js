@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import { i18n } from "discourse-i18n";
 import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
 import DiscourseURL from "discourse/lib/url";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
@@ -11,12 +12,14 @@ export default class ServiceSearchExtension extends Component {
   @service currentUser;
   @service dialog;
 
+  @tracked showSuccessMessage = false;
+
   get searchTerm() {
     return this.search.activeGlobalSearchTerm;
   }
 
   get completeText() {
-    return i18n("button.label", { term: this.search.activeGlobalSearchTerm });
+    return i18n("button.label", { term: this.searchTerm });
   }
 
   @action
@@ -27,12 +30,18 @@ export default class ServiceSearchExtension extends Component {
         type: "PUT",
         data: {
           username: this.currentUser.username,
-          search_term: this.search.activeGlobalSearchTerm,
+          search_term: this.searchTerm,
         },
       });
+
+      this.showSuccessMessage = true;
+
+      setTimeout(() => {
+        this.showSuccessMessage = false;
+      }, 2000);
     } catch (error) {
       let errorMessage = error.jqXHR?.responseJSON?.errors?.[0] || "";
-      let errorKey = errorMessage.split(": ").pop().trim(); // Extract the last part
+      let errorKey = errorMessage.split(": ").pop().trim();
 
       const errorMessages = {
         missing_username: "js.message_error.missing_username",
