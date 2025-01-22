@@ -1,0 +1,20 @@
+{{#if this.searchTerm}}
+  <div class="search-extension-notification">
+    <DButton
+      @class="search-extension-button"
+      @action={{this.addToList}}
+      @icon="bell"
+      @title="button.title"
+    >
+      <span>
+        {{this.completeText}}
+      </span>
+    </DButton>
+    <DButton
+      @action={{this.settings}}
+      @icon="ellipsis-vertical"
+      @class="btn no-text search-extension-button-icon"
+      @title="settings.title"
+    />
+  </div>
+{{/if}}
