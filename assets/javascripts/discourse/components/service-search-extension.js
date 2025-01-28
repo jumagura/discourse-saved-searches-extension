@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import { i18n } from "discourse-i18n";
+import I18n from "I18n";
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 import DiscourseURL from "discourse/lib/url";
@@ -19,7 +19,7 @@ export default class ServiceSearchExtension extends Component {
   }
 
   get completeText() {
-    return i18n("button.label", { term: this.searchTerm });
+    return I18n.t("button.label", { term: this.searchTerm });
   }
 
   @action
