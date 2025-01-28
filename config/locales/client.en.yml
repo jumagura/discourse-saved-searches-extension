@@ -6,7 +6,7 @@ en:
     settings:
       title: "Manage your saved search notifications."
     success:
-      message: "Search term successfully added!"
+      message: "Search term successfully added"
     message_error:
       missing_parameter: "A required parameter is missing. Please check your input."
       limit_reached: "You cannot save more parameters."
