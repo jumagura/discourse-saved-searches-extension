@@ -3,6 +3,7 @@ en:
     button:
       label: " Include '%{term}' to search list notification."
       title: "Receive notifications when new topics or posts match your saved searches."
+      extension_config_button: "Config"
     settings:
       title: "Manage your saved search notifications."
     success:
